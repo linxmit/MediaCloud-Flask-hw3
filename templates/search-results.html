@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}Search Results{% endblock %}
+
+{% block content %}
+
+<div class="row">
+
+  <div class="col-md-12">
+  
+    <h3>Search Results</h3>
+
+    <p>You searched for "{{keywords}}"</p>
+
+    <p>In the US Mainstream Media online there have {{ sentenceCount }} sentences matching your search so far this year.</p>
+    <p> {{dateSplitedHTML}} </p>
+    <p> {{countSplitedHTML}} </p>
+
+
+<!doctype html>
+<meta charset="utf-8">
+
+<!-- load D3js -->
+<script src="http://www.d3plus.org/js/d3.js"></script>
+
+<!-- load D3plus after D3js -->
+<script src="http://www.d3plus.org/js/d3plus.js"></script>
+
+<!-- create container element for visualization -->
+<div id="viz"></div>
+
+<script>
+  var splitedDates = dateSplitedHTML.split(',');
+  var splitedCounts = countSplitedHTML.split(',');
+	for (var dates in splitedDates) {
+
+	}
+	    <p> {{splitedDates}} </p>
+    <p> {{splitedCounts}} </p>
+  var sample_data = [
+    
+  ]
+  // instantiate d3plus
+  var visualization = d3plus.viz()
+    .container("#viz")  // container DIV to hold the visualization
+    .data(sample_data)  // data to use with the visualization
+    .type("line")       // visualization type
+    .id("name")         // key for which our data is unique on
+    .text("name")       // key to use for display text
+    .y("value")         // key to use for y-axis
+    .x("year")          // key to use for x-axis
+    .draw()             // finally, draw the visualization!
+</script>
+
+  </div>
+
+</div>    
+
+{% endblock %}
